@@ -8,9 +8,13 @@ import java.util.Optional;
 
 public interface AuthorRepository extends CrudRepository <Author,Long>{
 //    Optional<Author> findById(long id);
-//    Iterable<Author> fetchAuthorsByName(String name);
-//    @Query(
-//        value = "SELECT * FROM authors WHERE name like %?name:%",
-//        nativeQuery = true
-//    )
+    @Query(
+        value = "SELECT * FROM authors WHERE name like %:name%",
+        nativeQuery = true
+    )
+    Iterable<Author> fetchAuthorsByName(String name);
+    @Query("SELECT a FROM Author a WHERE a.name LIKE %:surname%")
+    Iterable<Author> fetchAuthorsBySurname(String surname);
+
+
 }

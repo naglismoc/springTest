@@ -28,6 +28,6 @@ public class Author {
     @Column(name = "surname")
     private String surname;
 //    @JsonManagedReference
-    @OneToMany(mappedBy = "author",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "author",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Book> books;
 }

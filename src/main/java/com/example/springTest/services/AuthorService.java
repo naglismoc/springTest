@@ -29,4 +29,10 @@ public class AuthorService {
     public void deleteById(Long id) {
         authorRepository.deleteById(id);
     }
+    public Iterable<Author> fetchAuthorsByName(String name) {
+        return authorRepository.fetchAuthorsByName(name);
+    }
+    public Iterable<Author> fetchAuthorsBySurame(String surname) {
+        return authorRepository.fetchAuthorsBySurname(surname);
+    }
 }

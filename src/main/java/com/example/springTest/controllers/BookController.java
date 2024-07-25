@@ -1,6 +1,5 @@
 package com.example.springTest.controllers;
 
-
 import com.example.springTest.models.Book;
 import com.example.springTest.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,5 +52,9 @@ public class BookController {
     public ResponseEntity<Void> deleteBook(@PathVariable Long id) {
         bookService.deleteById(id);
         return ResponseEntity.noContent().build();
+    }
+    @GetMapping("/filterByAuthor")
+    public Iterable<Book> filterBooksByAuthorId(@RequestParam Long id) {
+        return bookService.filterBooksByAuthorId(id);
     }
 }

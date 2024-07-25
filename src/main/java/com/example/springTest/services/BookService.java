@@ -1,6 +1,7 @@
 package com.example.springTest.services;
 
 
+import com.example.springTest.models.Author;
 import com.example.springTest.models.Book;
 import com.example.springTest.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,5 +29,8 @@ public class BookService {
 
     public void deleteById(Long id) {
         bookRepository.deleteById(id);
+    }
+    public Iterable<Book> filterBooksByAuthorId(Long id) {
+        return bookRepository.filterBooksByAuthorId(id);
     }
 }

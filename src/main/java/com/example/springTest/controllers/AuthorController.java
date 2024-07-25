@@ -54,4 +54,12 @@ public class AuthorController {
         authorService.deleteById(id);
         return ResponseEntity.noContent().build();
     }
+    @GetMapping("/searchName")
+    public Iterable<Author> searchAuthorsByName(@RequestParam String name) {
+        return authorService.fetchAuthorsByName(name);
+    }
+    @GetMapping("/searchSurname")
+    public Iterable<Author> searchAuthorsBySurname(@RequestParam String surname) {
+        return authorService.fetchAuthorsBySurame(surname);
+    }
 }

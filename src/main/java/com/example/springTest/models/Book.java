@@ -27,7 +27,7 @@ public class Book {
     @Column(name = "genre")
     private String genre;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
 //    @JsonBackReference
     @JoinColumn(name = "author_id", nullable = false)
     private Author author;
